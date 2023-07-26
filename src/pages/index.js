@@ -3,9 +3,9 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function Home() {
-  gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
 
     gsap.from(".page1 .box", {
       scale: 0,
