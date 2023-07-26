@@ -1,20 +1,13 @@
-import { useEffect, useRef } from "react"
+import { useEffect } from "react"
 import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-gsap.registerPlugin(ScrollTrigger);
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function Home() {
-
-  const page1 = useRef(null)
-  const page2 = useRef(null)
-  const page3 = useRef(null)
-  const box1 = useRef(null)
-  const box2 = useRef(null)
-  const box3 = useRef(null)
+  gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
 
-    gsap.from(box1.current, {
+    gsap.from(".page1 .box", {
       scale: 0,
       opacity: 0,
       rotate: 360,
@@ -22,7 +15,7 @@ export default function Home() {
       delay: 1
     })
 
-    gsap.from(box2.current, {
+    gsap.from(".page2 .box", {
       scale: 0,
       opacity: 0,
       rotate: 360,
@@ -35,14 +28,14 @@ export default function Home() {
   }, [])
   return (
     <div>
-      <div className="page1" ref={page1}>
-        <div className="box" ref={box1}></div>
+      <div className="page1">
+        <div className="box"></div>
       </div>
-      <div className="page2" ref={page2}>
-        <div className="box" ref={box2}></div>
+      <div className="page2">
+        <div className="box"></div>
       </div>
-      <div className="page3" ref={page3}>
-        <div className="box" ref={box3}></div>
+      <div className="page3">
+        <div className="box"></div>
       </div>
     </div>
   )
